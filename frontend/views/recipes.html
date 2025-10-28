@@ -1,100 +1,137 @@
-<!-- Recipes Section -->
-<section id="recipes" class="starter-section section py-5">
+<!-- ======= Recipes Section ======= -->
 
-  <!-- Section Title -->
-  <div class="container section-title text-center" data-aos="fade-up">
-    <span class="description-title">Discover Recipes</span>
-    <h2>Explore Delicious Creations</h2>
-    <p>Browse our collection of user-submitted recipes, from everyday meals to special occasion dishes.</p>
-  </div>
+<section id="recipes" class="recipes section">
 
-  <!-- Search & Filter -->
   <div class="container" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-6 mb-3 mb-md-0">
-        <div class="input-group shadow-sm">
-          <input type="text" class="form-control rounded-start-pill" placeholder="Search for recipes...">
-          <button class="btn btn-primary rounded-end-pill px-4" type="button">
-            <i class="bi bi-search"></i>
-          </button>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <select class="form-select shadow-sm rounded-pill">
-          <option selected>Filter by category</option>
-          <option value="1">Breakfast</option>
-          <option value="2">Lunch</option>
-          <option value="3">Dinner</option>
-          <option value="4">Dessert</option>
-        </select>
-      </div>
+    
+    <!-- Section Header -->
+    <div class="section-header text-center mb-5">
+      <h2>Discover Delicious Recipes</h2>
+      <p>Explore our collection of mouth-watering recipes shared by our community</p>
     </div>
-  </div>
 
-  <!-- Recipes Grid -->
-  <div class="container" data-aos="fade-up" data-aos-delay="150">
+    <!-- Recipe Cards Grid -->
     <div class="row gy-4">
 
-      <!-- Recipe Card -->
-      <div class="col-lg-4 col-md-6">
-        <div class="card recipe-card h-100 border-0 shadow-sm">
-          <div class="recipe-img-wrapper">
-            <img src="img/recipes/pasta.jpg" class="card-img-top" alt="Creamy Alfredo Pasta">
+      <!-- Recipe Card 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop" alt="Classic Spaghetti Carbonara" class="img-fluid">
+            <div class="recipe-badge">Popular</div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Creamy Alfredo Pasta</h5>
-            <p class="card-meta"><i class="bi bi-person-circle"></i> Sarah · <i class="bi bi-clock"></i> 25 mins</p>
-            <p class="card-text">A rich and creamy classic pasta dish topped with fresh parmesan and herbs.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <a href="#" class="btn btn-outline-primary w-100 rounded-pill"><i class="bi bi-eye"></i> View Recipe</a>
+          <div class="recipe-content">
+            <div class="recipe-meta">
+              <span><i class="bi bi-clock"></i> 30 min</span>
+              <span><i class="bi bi-person"></i> 4 servings</span>
+            </div>
+            <h3 class="recipe-title">Classic Spaghetti Carbonara</h3>
+            <p class="recipe-description">
+              Creamy Italian pasta with crispy pancetta, eggs, and parmesan cheese. A timeless comfort food classic.
+            </p>
+            <div class="recipe-tags">
+              <span class="tag">Italian</span>
+              <span class="tag">Pasta</span>
+              <span class="tag">Easy</span>
+            </div>
+            <div class="recipe-footer">
+              <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <span>4.5</span>
+              </div>
+              <a href="#recipe-detail" class="btn-view">View Recipe <i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Recipe Card -->
-      <div class="col-lg-4 col-md-6">
-        <div class="card recipe-card h-100 border-0 shadow-sm">
-          <div class="recipe-img-wrapper">
-            <img src="img/recipes/burger.jpg" class="card-img-top" alt="Juicy Beef Burger">
+      <!-- Recipe Card 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=400&fit=crop" alt="Blueberry Pancakes" class="img-fluid">
+            <div class="recipe-badge badge-new">New</div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Juicy Beef Burger</h5>
-            <p class="card-meta"><i class="bi bi-person-circle"></i> Mark · <i class="bi bi-clock"></i> 40 mins</p>
-            <p class="card-text">Grilled to perfection, this burger is packed with flavor and topped with melted cheese.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <a href="#" class="btn btn-outline-primary w-100 rounded-pill"><i class="bi bi-eye"></i> View Recipe</a>
+          <div class="recipe-content">
+            <div class="recipe-meta">
+              <span><i class="bi bi-clock"></i> 20 min</span>
+              <span><i class="bi bi-person"></i> 2 servings</span>
+            </div>
+            <h3 class="recipe-title">Fluffy Blueberry Pancakes</h3>
+            <p class="recipe-description">
+              Light and fluffy pancakes loaded with fresh blueberries. Perfect for a weekend breakfast treat.
+            </p>
+            <div class="recipe-tags">
+              <span class="tag">Breakfast</span>
+              <span class="tag">Sweet</span>
+              <span class="tag">Quick</span>
+            </div>
+            <div class="recipe-footer">
+              <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <span>5.0</span>
+              </div>
+              <a href="#recipe-detail" class="btn-view">View Recipe <i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Recipe Card -->
-      <div class="col-lg-4 col-md-6">
-        <div class="card recipe-card h-100 border-0 shadow-sm">
-          <div class="recipe-img-wrapper">
-            <img src="img/recipes/pancakes.jpg" class="card-img-top" alt="Fluffy Pancakes">
+      <!-- Recipe Card 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="recipe-card">
+          <div class="recipe-image">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop" alt="Fresh Garden Salad" class="img-fluid">
+            <div class="recipe-badge badge-healthy">Healthy</div>
           </div>
-          <div class="card-body">
-            <h5 class="card-title">Fluffy Pancakes</h5>
-            <p class="card-meta"><i class="bi bi-person-circle"></i> Emily · <i class="bi bi-clock"></i> 20 mins</p>
-            <p class="card-text">Golden, buttery pancakes served with fresh berries and maple syrup.</p>
-          </div>
-          <div class="card-footer bg-transparent border-0">
-            <a href="#" class="btn btn-outline-primary w-100 rounded-pill"><i class="bi bi-eye"></i> View Recipe</a>
+          <div class="recipe-content">
+            <div class="recipe-meta">
+              <span><i class="bi bi-clock"></i> 15 min</span>
+              <span><i class="bi bi-person"></i> 3 servings</span>
+            </div>
+            <h3 class="recipe-title">Fresh Garden Salad Bowl</h3>
+            <p class="recipe-description">
+              Crisp mixed greens with cherry tomatoes, cucumber, and a tangy vinaigrette. Light and refreshing!
+            </p>
+            <div class="recipe-tags">
+              <span class="tag">Salad</span>
+              <span class="tag">Vegan</span>
+              <span class="tag">Healthy</span>
+            </div>
+            <div class="recipe-footer">
+              <div class="recipe-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star"></i>
+                <span>4.2</span>
+              </div>
+              <a href="#recipe-detail" class="btn-view">View Recipe <i class="bi bi-arrow-right"></i></a>
+            </div>
           </div>
         </div>
       </div>
 
     </div>
 
-    <!-- Load More -->
-    <div class="text-center mt-5">
-      <button class="btn btn-primary rounded-pill px-4 py-2">
-        <i class="bi bi-arrow-down-circle"></i> Load More
-      </button>
+    <!-- Browse More Button -->
+    <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
+      <a href="#recipes" class="btn btn-primary btn-lg">
+        Browse All Recipes <i class="bi bi-arrow-right ms-2"></i>
+      </a>
     </div>
+
   </div>
 
 </section>
+
 <!-- End Recipes Section -->

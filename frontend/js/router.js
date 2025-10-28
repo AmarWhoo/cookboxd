@@ -15,6 +15,7 @@ const VIEWS_BASE = '/AmarCajdric/cookboxd/frontend/views/';
 const routes = {
   home: 'home.html',
   recipes: 'recipes.html',
+  'recipe-detail': 'recipe-detail.html',
   login: 'login.html',
   register: 'register.html',
   about: 'about.html',
@@ -34,7 +35,10 @@ function showLoader() {
 }
 
 function getHash() {
-  return window.location.hash.replace(/^#\/?/, '').trim();
+  const hash = window.location.hash.replace(/^#\/?/, '').trim();
+  // Handle dynamic routes like recipe-detail/carbonara
+  const parts = hash.split('/');
+  return parts[0] || '';
 }
 
 function updateActiveLink(page) {
