@@ -1,37 +1,117 @@
 <!-- ======= Login Section ======= -->
-<section id="login" class="section py-5" style="display: none;">
-  <div class="container" data-aos="fade-up">
+
+<section id="login" class="login section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    
     <div class="row justify-content-center">
       <div class="col-lg-5 col-md-8">
-
-        <div class="card shadow-lg border-0 rounded-4">
-          <div class="card-body p-4">
-            <h2 class="text-center mb-4 fw-bold">Login to Cookboxd</h2>
-
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="loginEmail" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="loginPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
-              </div>
-
-              <button type="submit" class="btn btn-primary w-100 py-2 mt-2">Login</button>
-            </form>
-
-            <div class="text-center mt-3">
-              <p class="mb-0">Don’t have an account?
-                <a href="#register" class="text-decoration-none fw-semibold">Register</a>
-              </p>
-            </div>
+        
+        <div class="login-card">
+          
+          <!-- Login Header -->
+          <div class="login-header text-center mb-4">
+            <h2>Welcome Back</h2>
+            <p>Sign in to access your recipe collection</p>
           </div>
+
+          <!-- Login Form -->
+          <form id="loginForm" class="form-messages">
+            
+            <!-- Email Input -->
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bi bi-envelope"></i>
+                </span>
+                <input 
+                  type="email" 
+                  class="form-control" 
+                  id="email" 
+                  name="email" 
+                  placeholder="your@email.com" 
+                  required
+                >
+              </div>
+            </div>
+
+            <!-- Password Input -->
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="bi bi-lock"></i>
+                </span>
+                <input 
+                  type="password" 
+                  class="form-control" 
+                  id="password" 
+                  name="password" 
+                  placeholder="Enter your password" 
+                  required
+                >
+                <button class="input-group-text btn-toggle-password" type="button" onclick="togglePassword()">
+                  <i class="bi bi-eye" id="toggleIcon"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Remember Me & Forgot Password -->
+            <div class="form-options d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rememberMe" name="rememberMe">
+                <label class="form-check-label" for="rememberMe">
+                  Remember me
+                </label>
+              </div>
+              <a href="#forgot-password" class="forgot-link">Forgot Password?</a>
+            </div>
+
+            <!-- Form Messages -->
+            <div class="loading">Loading...</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Login successful! Redirecting...</div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary w-100">
+                <i class="bi bi-box-arrow-in-right me-2"></i>
+                Sign In
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Divider -->
+          <div class="login-divider">
+            <span>or</span>
+          </div>
+
+          <!-- Social Login Options -->
+          <div class="social-login">
+            <button type="button" class="btn btn-social btn-google w-100 mb-2">
+              <i class="bi bi-google me-2"></i>
+              Continue with Google
+            </button>
+            <button type="button" class="btn btn-social btn-facebook w-100">
+              <i class="bi bi-facebook me-2"></i>
+              Continue with Facebook
+            </button>
+          </div>
+
+          <!-- Register Link -->
+          <div class="login-footer text-center mt-4">
+            <p>Don't have an account? <a href="#register" class="register-link">Sign up here</a></p>
+          </div>
+
         </div>
 
       </div>
     </div>
+
   </div>
+
 </section>
+
 <!-- End Login Section -->

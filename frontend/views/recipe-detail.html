@@ -1,0 +1,408 @@
+<!-- ======= Recipe Detail Section ======= -->
+
+<section id="recipe-detail" class="recipe-detail section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <!-- Back Button -->
+    <div class="mb-4">
+      <a href="#recipes" class="btn btn-outline-secondary">
+        <i class="bi bi-arrow-left"></i> Back to Recipes
+      </a>
+    </div>
+
+    <!-- Recipe Header -->
+    <div class="recipe-header mb-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="recipe-title mb-3">Classic Spaghetti Carbonara</h1>
+          <div class="recipe-meta-info mb-3">
+            <span class="me-3"><i class="bi bi-person-circle"></i> By Chef Mario</span>
+            <span class="me-3">
+              <span class="rating-stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+              </span>
+              <span class="rating-value">4.5</span>
+              <span class="text-muted">(128 reviews)</span>
+            </span>
+          </div>
+          <p class="lead">Creamy Italian pasta with crispy pancetta, eggs, and parmesan cheese. A timeless comfort food classic.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <button class="btn btn-primary btn-lg mb-2 w-100">
+            <i class="bi bi-bookmark"></i> Save Recipe
+          </button>
+          <button class="btn btn-outline-primary btn-lg w-100">
+            <i class="bi bi-share"></i> Share
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recipe Image -->
+    <div class="recipe-image-container mb-5" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&h=800&fit=crop" alt="Classic Spaghetti Carbonara" class="img-fluid rounded-4 shadow">
+    </div>
+
+    <!-- Recipe Info Cards -->
+    <div class="row g-4 mb-5" data-aos="fade-up" data-aos-delay="300">
+      <div class="col-md-3 col-6">
+        <div class="info-card">
+          <i class="bi bi-clock"></i>
+          <div>
+            <h5>Prep Time</h5>
+            <p>30 min</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="info-card">
+          <i class="bi bi-people"></i>
+          <div>
+            <h5>Servings</h5>
+            <p>4 people</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="info-card">
+          <i class="bi bi-speedometer2"></i>
+          <div>
+            <h5>Difficulty</h5>
+            <p>Easy</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="info-card">
+          <i class="bi bi-tag"></i>
+          <div>
+            <h5>Category</h5>
+            <p>Italian</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Ingredients Column -->
+      <div class="col-lg-4" data-aos="fade-right" data-aos-delay="400">
+        <div class="ingredients-section sticky-section">
+          <h2 class="section-title">
+            <i class="bi bi-basket"></i> Ingredients
+          </h2>
+          <div class="ingredients-list">
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-spaghetti" class="ingredient-checkbox">
+              <label for="ing-spaghetti">
+                <span class="amount">400g</span> Spaghetti
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-pancetta" class="ingredient-checkbox">
+              <label for="ing-pancetta">
+                <span class="amount">200g</span> Pancetta or guanciale, diced
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-egg-yolks" class="ingredient-checkbox">
+              <label for="ing-egg-yolks">
+                <span class="amount">4</span> Large egg yolks
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-whole-egg" class="ingredient-checkbox">
+              <label for="ing-whole-egg">
+                <span class="amount">1</span> Whole egg
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-parmesan" class="ingredient-checkbox">
+              <label for="ing-parmesan">
+                <span class="amount">100g</span> Parmesan cheese, freshly grated
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-pecorino" class="ingredient-checkbox">
+              <label for="ing-pecorino">
+                <span class="amount">50g</span> Pecorino Romano cheese, grated
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-garlic" class="ingredient-checkbox">
+              <label for="ing-garlic">
+                <span class="amount">2 cloves</span> Garlic, minced
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-pepper" class="ingredient-checkbox">
+              <label for="ing-pepper">
+                <span class="amount">To taste</span> Black pepper, freshly ground
+              </label>
+            </div>
+            <div class="ingredient-item">
+              <input type="checkbox" id="ing-salt" class="ingredient-checkbox">
+              <label for="ing-salt">
+                <span class="amount">To taste</span> Salt
+              </label>
+            </div>
+          </div>
+
+          <!-- Nutrition Info -->
+          <div class="nutrition-info mt-4">
+            <h3>Nutrition (per serving)</h3>
+            <div class="nutrition-grid">
+              <div class="nutrition-item">
+                <span class="label">Calories</span>
+                <span class="value">520</span>
+              </div>
+              <div class="nutrition-item">
+                <span class="label">Protein</span>
+                <span class="value">24g</span>
+              </div>
+              <div class="nutrition-item">
+                <span class="label">Carbs</span>
+                <span class="value">58g</span>
+              </div>
+              <div class="nutrition-item">
+                <span class="label">Fat</span>
+                <span class="value">20g</span>
+              </div>
+              <div class="nutrition-item">
+                <span class="label">Fiber</span>
+                <span class="value">3g</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructions Column -->
+      <div class="col-lg-8" data-aos="fade-left" data-aos-delay="500">
+        <div class="instructions-section">
+          <h2 class="section-title">
+            <i class="bi bi-list-ol"></i> Instructions
+          </h2>
+          <div class="instructions-list">
+            <div class="instruction-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <p>Bring a large pot of salted water to boil. Cook spaghetti according to package directions until al dente.</p>
+              </div>
+            </div>
+            <div class="instruction-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <p>While pasta cooks, heat a large skillet over medium heat. Add pancetta and cook until crispy, about 5-7 minutes.</p>
+              </div>
+            </div>
+            <div class="instruction-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <p>In a bowl, whisk together egg yolks, whole egg, Parmesan, Pecorino, and a generous amount of black pepper.</p>
+              </div>
+            </div>
+            <div class="instruction-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <p>Reserve 1 cup of pasta water, then drain the pasta.</p>
+              </div>
+            </div>
+            <div class="instruction-step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <p>Add the hot pasta to the skillet with pancetta (off heat). Toss to combine.</p>
+              </div>
+            </div>
+            <div class="instruction-step">
+              <div class="step-number">6</div>
+              <div class="step-content">
+                <p>Quickly pour in the egg mixture while tossing constantly. Add pasta water a little at a time to create a creamy sauce.</p>
+              </div>
+            </div>
+            <div class="instruction-step">
+              <div class="step-number">7</div>
+              <div class="step-content">
+                <p>Season with additional black pepper and serve immediately with extra cheese on top.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="tips-section mt-5">
+          <h2 class="section-title">
+            <i class="bi bi-lightbulb"></i> Chef's Tips
+          </h2>
+          <div class="tips-list">
+            <div class="tip-item">
+              <i class="bi bi-check-circle"></i>
+              <p>The key is to work quickly and off heat when adding eggs to prevent scrambling.</p>
+            </div>
+            <div class="tip-item">
+              <i class="bi bi-check-circle"></i>
+              <p>Use freshly grated cheese for the best flavor and texture.</p>
+            </div>
+            <div class="tip-item">
+              <i class="bi bi-check-circle"></i>
+              <p>Save some pasta water - it's essential for creating the silky sauce.</p>
+            </div>
+            <div class="tip-item">
+              <i class="bi bi-check-circle"></i>
+              <p>Traditional carbonara doesn't use cream - the creaminess comes from the egg and cheese mixture.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="recipe-tags-section mt-4">
+          <span class="recipe-tag">Italian</span>
+          <span class="recipe-tag">Pasta</span>
+          <span class="recipe-tag">Easy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-section mt-5" data-aos="fade-up" data-aos-delay="600">
+      <h2 class="section-title mb-4">
+        <i class="bi bi-chat-left-text"></i> Reviews (128)
+      </h2>
+
+      <!-- Add Review Form -->
+      <div class="add-review-form mb-5">
+        <h3 class="h5 mb-3">Leave a Review</h3>
+        <form class="form-messages">
+          <div class="row gy-3">
+            <div class="col-12">
+              <label class="form-label">Your Rating</label>
+              <div class="rating-input">
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+                <i class="bi bi-star"></i>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" rows="4" placeholder="Share your thoughts about this recipe..." required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-send me-2"></i>Submit Review
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sample Reviews -->
+      <div class="reviews-list">
+        
+        <!-- Review 1 -->
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <i class="bi bi-person-circle"></i>
+              </div>
+              <div>
+                <h4 class="reviewer-name">Sarah Johnson</h4>
+                <div class="review-meta">
+                  <span class="review-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </span>
+                  <span class="review-date">2 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, iure dolorem. Harum temporibus dicta earum tempore neque enim praesentium dignissimos sapiente ex iusto, sequi rem.</p>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <i class="bi bi-person-circle"></i>
+              </div>
+              <div>
+                <h4 class="reviewer-name">Mike Chen</h4>
+                <div class="review-meta">
+                  <span class="review-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star"></i>
+                  </span>
+                  <span class="review-date">1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla, iure dolorem. Harum temporibus dicta earum tempore neque enim praesentium dignissimos sapiente ex iusto, sequi rem. Ab dolor facilis qui ad.</p>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-item">
+          <div class="review-header">
+            <div class="reviewer-info">
+              <div class="reviewer-avatar">
+                <i class="bi bi-person-circle"></i>
+              </div>
+              <div>
+                <h4 class="reviewer-name">Emma Rodriguez</h4>
+                <div class="review-meta">
+                  <span class="review-rating">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                  </span>
+                  <span class="review-date">2 weeks ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio fugit beatae iusto eligendi esse doloribus recusandae eius aperiam maiores accusamus reprehenderit eveniet.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Load More Button -->
+      <div class="text-center mt-4">
+        <button class="btn btn-outline-primary">
+          Load More Reviews
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- End Recipe Detail Section -->
