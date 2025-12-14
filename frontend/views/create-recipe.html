@@ -1,0 +1,138 @@
+<!-- ======= Create Recipe Section ======= -->
+
+<section id="create-recipe" class="create-recipe section">
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        
+        <div class="card p-4">
+          
+          <div class="text-center mb-4">
+            <h2>Create New Recipe</h2>
+            <p>Share your recipe with the community</p>
+          </div>
+
+          <form id="createRecipeForm">
+            
+            <div class="mb-3">
+              <label for="title" class="form-label">Recipe Title *</label>
+              <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Description *</label>
+              <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="prepTime" class="form-label">Prep Time (min)</label>
+                <input type="number" class="form-control" id="prepTime" name="prep_time" min="1">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="cookTime" class="form-label">Cook Time (min)</label>
+                <input type="number" class="form-control" id="cookTime" name="cook_time" min="1">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="servings" class="form-label">Servings</label>
+                <input type="number" class="form-control" id="servings" name="servings" min="1">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-control" id="category" name="category_id">
+                <option value="">Select a category</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label for="imageUrl" class="form-label">Image URL</label>
+              <input type="url" class="form-control" id="imageUrl" name="image_url">
+            </div>
+
+            <div class="mb-4">
+              <label for="instructions" class="form-label">Instructions *</label>
+              <textarea class="form-control" id="instructions" name="instructions" rows="6" required></textarea>
+            </div>
+
+            <div class="loading" style="display:none;">Saving...</div>
+            <div class="error-message alert alert-danger" style="display:none;"></div>
+            <div class="sent-message alert alert-success" style="display:none;">Recipe created!</div>
+
+            <button type="submit" class="btn btn-primary w-100">Create Recipe</button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Load categories
+(async function() {
+    try {
+        const res = await apiRequest('/categories');
+        if (res.ok) {
+            const categories = await res.json();
+            const select = document.getElementById('category');
+            categories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat.category_id;
+                option.textContent = cat.name;
+                select.appendChild(option);
+            });
+        }
+    } catch (e) {}
+})();
+
+document.getElementById('createRecipeForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const errorMsg = document.querySelector('.error-message');
+    const successMsg = document.querySelector('.sent-message');
+    const loading = document.querySelector('.loading');
+    
+    errorMsg.style.display = 'none';
+    successMsg.style.display = 'none';
+    loading.style.display = 'block';
+    
+    const formData = {
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        instructions: document.getElementById('instructions').value,
+        prep_time: document.getElementById('prepTime').value || null,
+        cook_time: document.getElementById('cookTime').value || null,
+        servings: document.getElementById('servings').value || null,
+        category_id: document.getElementById('category').value || null,
+        image_url: document.getElementById('imageUrl').value || null,
+        user_id: getUser()?.user_id
+    };
+    
+    try {
+        const res = await apiRequest('/recipes', {
+            method: 'POST',
+            body: JSON.stringify(formData)
+        });
+        
+        loading.style.display = 'none';
+        
+        if (res.ok) {
+            successMsg.style.display = 'block';
+            document.getElementById('createRecipeForm').reset();
+            setTimeout(() => { window.location.hash = '#recipes'; }, 1500);
+        } else {
+            const err = await res.text();
+            errorMsg.textContent = err || 'Failed to create recipe';
+            errorMsg.style.display = 'block';
+        }
+    } catch (err) {
+        loading.style.display = 'none';
+        errorMsg.textContent = 'Connection error.';
+        errorMsg.style.display = 'block';
+    }
+});
+</script>

@@ -16,6 +16,7 @@ const routes = {
   home: 'home.html',
   recipes: 'recipes.html',
   'recipe-detail': 'recipe-detail.html',
+  'create-recipe': 'create-recipe.html',
   login: 'login.html',
   register: 'register.html',
   about: 'about.html',
