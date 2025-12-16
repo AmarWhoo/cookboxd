@@ -29,6 +29,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         array (
             'OpenApi\\' => 8,
         ),
+        'F' =>
+        array (
+            'Firebase\\JWT\\' => 13,
+        ),
         'D' =>
         array (
             'Doctrine\\Deprecations\\' => 22,
@@ -61,6 +65,10 @@ class ComposerStaticInit8d070178755c320c69f93ee4800660ef
         'OpenApi\\' =>
         array (
             0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
+        ),
+        'Firebase\\JWT\\' =>
+        array (
+            0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
         ),
         'Doctrine\\Deprecations\\' =>
         array (

@@ -1,8 +1,10 @@
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+ini_set('display_errors', 0);
+error_reporting(0);
 
 require __DIR__ . '/../../../vendor/autoload.php';
+require __DIR__ . '/../../../dao/config.php';
+require __DIR__ . '/../../../data/Roles.php';
 
 if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0.1'){
     define('BASE_URL', 'http://localhost/AmarCajdric/cookboxd/backend');
@@ -12,7 +14,7 @@ if($_SERVER['SERVER_NAME'] == 'localhost' || $_SERVER['SERVER_NAME'] == '127.0.0
 
 $openapi = \OpenApi\Generator::scan([
     __DIR__ . '/doc_setup.php',
-    __DIR__ . '/../../../routes'
+    __DIR__ . '/../../../rest/routes'
 ]);
 
 header('Content-Type: application/json');

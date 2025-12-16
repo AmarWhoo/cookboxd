@@ -1,79 +1,57 @@
 <?php
+require 'vendor/autoload.php';
 
-/**
- * Cookboxd REST API - Main Entry Point
- * FlightPHP-based REST API for recipe sharing platform
- */
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
-// Enable error reporting for development
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+require_once __DIR__ . '/dao/config.php';
+require_once __DIR__ . '/data/Roles.php';
+require_once __DIR__ . '/middleware/AuthMiddleware.php';
 
-// CORS headers for frontend access
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Authorization');
-header('Content-Type: application/json');
+require_once __DIR__ . '/rest/services/AuthService.php';
+require_once __DIR__ . '/rest/services/UserService.php';
+require_once __DIR__ . '/rest/services/CategoryService.php';
+require_once __DIR__ . '/rest/services/RecipeService.php';
+require_once __DIR__ . '/rest/services/IngredientService.php';
+require_once __DIR__ . '/rest/services/CommentService.php';
 
-// Handle preflight OPTIONS requests
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
+Flight::register('auth_service', 'AuthService');
+Flight::register('auth_middleware', 'AuthMiddleware');
+Flight::register('userService', 'UserService');
+Flight::register('categoryService', 'CategoryService');
+Flight::register('recipeService', 'RecipeService');
+Flight::register('ingredientService', 'IngredientService');
+Flight::register('commentService', 'CommentService');
 
-// Autoload vendor (FlightPHP)
-require __DIR__ . '/vendor/autoload.php';
+// Global middleware - verify JWT token for all routes except auth
+Flight::route('/*', function() {
+    if (
+        strpos(Flight::request()->url, '/auth/login') === 0 ||
+        strpos(Flight::request()->url, '/auth/register') === 0
+    ) {
+        return TRUE;
+    } else {
+        try {
+            $token = Flight::request()->getHeader("Authentication");
+            if (!$token)
+                Flight::halt(401, "Missing authentication header");
 
-// Load services
-require_once __DIR__ . '/services/UserService.php';
-require_once __DIR__ . '/services/CategoryService.php';
-require_once __DIR__ . '/services/RecipeService.php';
-require_once __DIR__ . '/services/IngredientService.php';
-require_once __DIR__ . '/services/CommentService.php';
+            $decoded_token = JWT::decode($token, new Key(Config::JWT_SECRET(), 'HS256'));
 
-// Load route files
-require_once __DIR__ . '/routes/userRoutes.php';
-require_once __DIR__ . '/routes/categoryRoutes.php';
-require_once __DIR__ . '/routes/recipeRoutes.php';
-require_once __DIR__ . '/routes/ingredientRoutes.php';
-require_once __DIR__ . '/routes/commentRoutes.php';
-
-// Initialize FlightPHP
-Flight::route('GET /', function() {
-    Flight::json([
-        'success' => true,
-        'message' => 'Cookboxd API v1.0',
-        'endpoints' => [
-            'users' => '/api/users',
-            'categories' => '/api/categories',
-            'recipes' => '/api/recipes',
-            'ingredients' => '/api/ingredients',
-            'comments' => '/api/comments'
-        ]
-    ]);
+            Flight::set('user', $decoded_token->user);
+            Flight::set('jwt_token', $token);
+            return TRUE;
+        } catch (\Exception $e) {
+            Flight::halt(401, $e->getMessage());
+        }
+    }
 });
 
-// 404 handler
-Flight::map('notFound', function() {
-    Flight::json([
-        'success' => false,
-        'message' => 'Endpoint not found'
-    ], 404);
-});
+require_once __DIR__ . '/rest/routes/AuthRoutes.php';
+require_once __DIR__ . '/rest/routes/userRoutes.php';
+require_once __DIR__ . '/rest/routes/categoryRoutes.php';
+require_once __DIR__ . '/rest/routes/recipeRoutes.php';
+require_once __DIR__ . '/rest/routes/ingredientRoutes.php';
+require_once __DIR__ . '/rest/routes/commentRoutes.php';
 
-// Error handler
-Flight::map('error', function($e) {
-    Flight::json([
-        'success' => false,
-        'message' => 'Server error: ' . $e->getMessage()
-    ], 500);
-});
-
-// Helper function to get JSON input
-Flight::map('getJsonInput', function() {
-    $input = file_get_contents('php://input');
-    return json_decode($input, true) ?: [];
-});
-
-// Start the application
 Flight::start();

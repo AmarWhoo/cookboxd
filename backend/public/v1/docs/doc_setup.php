@@ -24,3 +24,8 @@
  *     name="Authentication"
  * )
  */
+/**
+ * @OA\OpenApi(
+ *     security={{"ApiKey": {}}}
+ * )
+ */
